@@ -1,0 +1,223 @@
+.role-selection
+	height: 100%
+	.start-button
+		display: none
+		opacity: .4
+		+r(1199)
+			display: block
+	&__inner-wrapper
+		padding: 54px 0 70px
+		display: flex
+		justify-content: space-between
+		+r(1199)
+			flex-direction: column
+			padding: 40px 0 50px
+			display: block
+	&__col
+		max-width: 29.413%
+		flex-basis: 29.413%
+		position: relative
+		display: flex
+		flex-direction: column
+		align-items: center
+		justify-content: center
+		+r(1199)
+			max-width: 100%
+			flex-basis: 100%
+			margin-bottom: 60px
+			&:last-of-type
+				margin-bottom: 0
+		&::before
+			content: ''
+			width: 35px
+			height: 35px
+			border-bottom: 2px solid $accentColor
+			border-right: 2px solid $accentColor
+			position: absolute
+			top: calc(50% - 17.5px)
+			left: calc(100% + 15px)
+			transform: rotate(-45deg)
+			opacity: .2
+			+r(1199)
+				width: 18px
+				height: 18px
+				top: calc(100% + 15px)
+				left: calc(50% - 9px)
+				transform: rotate(45deg)
+		&:last-of-type
+			&::before
+				content: none
+		&--active
+			&::before
+				opacity: 1
+			.role-selection__arrow
+				opacity: 1
+	&__block
+		min-height: 232px
+		display: flex
+		flex-direction: column
+		align-items: center
+		background: $helperColor2
+		box-shadow: 4px 4px 20px rgba($fontColor, 0.07)
+		border-radius: 10px
+		margin-bottom: 40px
+		padding: 24px
+		cursor: default
+		position: relative
+		+r(1199)
+			margin-bottom: 16px
+			min-height: 192px
+			padding: 16px 16px 24px
+		&:after
+			content: ''
+			width: 100%
+			height: 100%
+			position: absolute
+			left: 0
+			top: 0
+			right: 0
+			bottom: 0
+			border: 1px solid rgba($fontColor, 0.1)
+			border-radius: 10px
+		&::before
+			content: ''
+			width: 100%
+			height: 100%
+			position: absolute
+			left: 0
+			top: 0
+			background: linear-gradient(180deg,#4d9cf9 0%,#1269cf 100%)
+			border-radius: 10px
+			opacity: 0
+			transition: all 1s ease
+		&:last-of-type
+			margin-bottom: 0
+		&--active
+			background: $bgColor
+			box-sizing: border-box
+			box-shadow: 2px 6px 20px rgba(77, 156, 249, 0.35)
+			border-radius: 10px
+			cursor: pointer
+			&:after
+				border: 1px solid rgba(77, 156, 249, 0.1)
+			&:hover, &:focus
+				&::before
+					opacity: 1
+				.role-selection__info
+					color: $bgColor
+				.role__name
+					color: $bgColor
+				.role-selection__status-size
+					color: $bgColor
+			.role-selection__info
+				color: $fontColor
+			.role__name
+				color: $accentColor
+			.start-button
+				opacity: 1
+	&__role
+		margin-bottom: 16px
+	&__status
+		margin-top: 18px
+		position: relative
+		+r(1199)
+			display: none
+		&-icon
+			margin-bottom: 8px
+			img
+				display: block
+		&-size
+			font-weight: 700
+			font-size: 18px
+			line-height: 1.222em
+			text-align: center
+			letter-spacing: 0.1em
+			text-transform: uppercase
+			color: rgba($fontColor, .5)
+			transition: all .5s ease
+
+	&__info
+		max-width: 312px
+		font-size: 14px
+		line-height: 1.71em
+		color: rgba($fontColor, .5)
+		position: relative
+		transition: all .5s ease
+		+r(1199)
+			margin-bottom: 16px
+
+		&--text-center
+			text-align: center
+			+r(1199)
+				text-align: left
+		&--padding-left
+			padding-left: 72px
+			+r(1199)
+				padding-left: 0
+		&--margin-top
+			margin-top: 8px
+			+r(1199)
+				margin-top: 0
+	&__arrow
+		position: absolute
+		width: 135px
+		height: 135px
+		opacity: .2
+		+r(1199)
+			display: none
+		&::before
+			content: ''
+			width: 35px
+			height: 35px
+			border-bottom: 2px solid $accentColor
+			border-right: 2px solid $accentColor
+			position: absolute
+			top: 0
+			left: 0
+			transform: rotate(-45deg)
+		&--left
+			right: -40px
+			&:first-of-type
+				top: 105px
+				border-radius: 30px 0 0 0
+				border-left: 2px solid $accentColor
+				border-top: 2px solid $accentColor
+				&:before
+					top: -18.5px
+					left: auto
+					right: 4px
+			&:last-of-type
+				bottom: 105px
+				border-radius: 0 0 0 30px
+				border-left: 2px solid $accentColor
+				border-bottom: 2px solid $accentColor
+				&:before
+					top: auto
+					left: auto
+					right: 4px
+					bottom: -18.5px
+		&--right
+			right: -167px
+			&:first-of-type
+				top: 105px
+				border-radius: 0 30px 0 0
+				border-top: 2px solid $accentColor
+				border-right: 2px solid $accentColor
+				&:before
+					top: auto
+					left: auto
+					right: -19px
+					bottom: 5px
+					transform: rotate(45deg)
+			&:last-of-type
+				bottom: 105px
+				border-radius: 0 0 30px 0
+				border-right: 2px solid $accentColor
+				border-bottom: 2px solid $accentColor
+				&:before
+					top: 5px
+					left: auto
+					right: -19px
+					transform: rotate(-135deg)
+
+
