@@ -6,12 +6,16 @@
 		display: flex
 		align-items: flex-start
 		+r(1199)
-			flex-direction: column
+			display: block
+
 	&__content
 		margin-right: 50px
+		max-width: 676px
 		+r(1199)
 			margin-right: 0
 			margin-bottom: 44px
+		+r(767)
+			max-width: none
 	&__image
 		width: 498px
 		border-radius: 10px
@@ -24,7 +28,6 @@
 			margin: 0 auto
 	&__status-bar
 		margin-bottom: 44px
-		max-width: 548px
 	&__question
 		max-width: 600px
 		margin-bottom: 24px
