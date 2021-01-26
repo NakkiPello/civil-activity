@@ -1,0 +1,37 @@
+.header-nav
+	margin-bottom: 56px
+	position: fixed
+	left: 0
+	top: 0
+	right: 0
+	z-index: 1000
+	&__list
+		padding: 24px 84px
+		box-shadow: 0 20px 35px rgba(0, 0, 0, 0.05)
+		border-radius: 30px
+		display: flex
+		background: $mainColor
+		justify-content: space-between
+		li
+			margin: 0 15px
+		a
+			display: flex
+			align-items: center
+			font-size: 18px
+			line-height: 1.33em
+			color: $helperColor2
+			.icon
+				font-size: 32px
+				display: block
+				fill: $helperColor2
+				margin-right: 20px
+				transition: all .5s ease
+			&.active
+				cursor: default
+				color: $accentColor
+				.icon
+					fill: $accentColor
+			transition: all .5s ease
+			&:hover, &:focus
+				.icon
+					fill: $accentColor
