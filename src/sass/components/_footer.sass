@@ -1,0 +1,39 @@
+.footer
+	padding: 80px 0 90px
+	+r(576)
+		padding: 50px 0 60px
+	&__title
+		text-align: center
+		margin-bottom: 36px
+	&__description
+		font-size: 18px
+		text-align: center
+		margin-bottom: 44px
+		+r(576)
+			margin-bottom: 30px
+		a
+			font-weight: 600
+			color: $accentColor
+	&__info
+		max-width: 585px
+		margin: 0 auto 44px
+		text-align: center
+		font-size: 14px
+		+r(576)
+			margin: 0 auto 30px
+	&__logo-list
+		display: flex
+		align-items: center
+		justify-content: center
+		flex-wrap: wrap
+	&__logo
+		margin: 0 12px
+		a
+			display: block
+		img
+			display: block
+			+r(576)
+				width: 100px
+				height: 70px
+				object-fit: contain
+

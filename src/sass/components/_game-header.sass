@@ -1,0 +1,19 @@
+.game-header
+	padding: 8px 0 12px
+	background-color: $backgroundColor
+	box-shadow: 0 10px 10px rgba(0, 0, 0, 0.05)
+	.container
+		max-width: 1046px
+	+r(576)
+		padding: 20px 0 12px
+	&__wrapper
+		display: flex
+		align-items: center
+		justify-content: space-between
+		+r(576)
+			flex-direction: column
+	&__user
+		margin-right: 30px
+		+r(576)
+			margin-right: 0
+			margin-bottom: 10px

@@ -1,0 +1,42 @@
+.button
+	display: block
+	font-family: $font
+	font-size: 18px
+	line-height: 1.25em
+	background: $accentColor
+	box-shadow: 15px 20px 40px rgba(176, 195, 210, 0.6)
+	border-radius: 30px
+	color: $mainColor
+	opacity: 1
+	padding: 21px
+	text-align: center
+	transition: all .3s ease
+	&--big
+		width: 100%
+	&--medium
+		width: 100%
+		max-width: 328px
+	&--center
+		margin: 0 auto
+	&--small-font
+		font-size: 16px
+		padding: 21px 5px
+	&--white
+		background-color: $mainColor
+		border: 1px solid $disabledBg
+		box-shadow: 15px 20px 40px rgba(176, 195, 210, 0.2)
+		color: $accentColor
+	&:hover, &:focus
+		transform: translateY(-1px)
+		box-shadow: 15px 20px 40px rgba(176, 195, 210, 0.7)
+	&:active
+		transform: translateY(1px)
+		box-shadow: 15px 10px 40px rgba(176, 195, 210, 0.9)
+	&:disabled
+		opacity: 0.3
+		&:hover, &:focus
+			transform: none
+			box-shadow: 15px 20px 40px rgba(176, 195, 210, 0.6)
+		&:active
+			transform: none
+			box-shadow: 15px 20px 40px rgba(176, 195, 210, 0.6)

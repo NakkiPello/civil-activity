@@ -1,51 +1,31 @@
 .status-bar
 	display: flex
-	justify-content: space-between
+	margin: 0 -8px
 	flex-wrap: wrap
-	position: relative
-	&__block
-		width: calc(25% - 18px)
-		box-shadow: 4px 4px 30px rgba(0, 0, 0, 0.05)
-		border-radius: 10px
+	&__card
+		margin: 0 8px 8px
 		display: flex
 		flex-direction: column
+		justify-content: center
 		align-items: center
-		padding: 16px
-		margin-right: 24px
-		&:last-of-type
-			margin-right: 0
-		+r(767)
-			width: calc(50% - 12px)
-			margin-right: 0
-			margin-bottom: 24px
-			&:nth-last-child(-n + 2)
-				margin-bottom: 0
-	&__icon
-		margin-bottom: 8px
-		img
-			display: block
-			width: 32px
-			height: 32px
-			object-fit: contain
-	&__size
-		position: relative
-		font-size: 18px
-		font-weight: 800
-		letter-spacing: 0.1em
-		margin-bottom: 4px
-		&--red
-			color: $redColor
-		&--green
-			color: $greenColor
+	&__image
+		width: 48px
+		height: 48px
 
-	&__changes
-		position: absolute
-		margin-left: 4px
+	&__title
 		font-size: 14px
-		font-weight: 400
-		letter-spacing: 0
-		&--red
-			color: $redColor
-		&--green
-			color: $greenColor
+		line-height: 1.5em
+		margin-bottom: 4px
+
+	&__points
+		font-size: 18px
+		width: 102px
+		font-weight: 700
+		letter-spacing: .1em
+		text-transform: uppercase
+		text-align: center
+		+r(767)
+			width: auto
+		+r(576)
+			max-width: 78px
 

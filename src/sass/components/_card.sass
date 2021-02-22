@@ -1,0 +1,81 @@
+.card
+	background: $helperColor2
+	border: 1px solid $helperColor3
+	box-sizing: border-box
+	border-radius: 10px
+	padding-bottom: 8px
+	width: 100%
+	max-width: 360px
+	min-height: 165px
+	transition: all .5s ease
+	display: flex
+	flex-direction: column
+	+r(576)
+		min-height: 145px
+	&__about
+		padding: 24px 12px 0 24px
+		margin-bottom: 15px
+		display: flex
+		align-items: center
+		+r(576)
+			padding: 20px 12px 0 16px
+		img
+			display: block
+			width: 48px
+			height: 48px
+			object-fit: contain
+			margin-right: 24px
+			+r(576)
+				margin-right: 16px
+		h3
+			display: block
+			color: rgba($helperColor, .2)
+			font-size: 20px
+			text-transform: uppercase
+			letter-spacing: .09em
+			line-height: 1.2em
+			+r(576)
+				font-size: 16px
+				letter-spacing: .07em
+	&__info
+		padding: 0 24px
+		margin: auto 0
+		+r(576)
+			padding: 0 16px
+		p
+			font-size: 14px
+			line-height: 1.5em
+			+r(576)
+				font-size: 13px
+	&__button-wrapper
+		display: none
+	&__button
+		display: block
+		width: 100%
+		border-radius: 0 0 10px 10px
+		font-family: $font
+		font-size: 16px
+		font-weight: 700
+		letter-spacing: .1em
+		line-height: 1em
+		color: $backgroundColor
+		background-color: $accentColor
+		text-transform: uppercase
+		padding: 18px
+		text-align: center
+		transition: all .5s ease
+		&:hover, &:focus
+			background-color: $accentColor2
+			box-shadow: 15px 20px 40px #E7C0FC
+	&--active
+		background-color: $backgroundColor
+		border-color: rgba(104, 33, 141, 0.1)
+		box-shadow: 15px 20px 40px rgba(196, 144, 224, 0.25)
+		padding-bottom: 0
+		.card__about
+			h3
+				color: $accentColor
+		.card__info
+			margin-bottom: 15px
+		.card__button-wrapper
+			display: block

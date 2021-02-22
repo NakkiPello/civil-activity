@@ -1,0 +1,58 @@
+.intro
+	overflow: hidden
+	padding-bottom: 83px
+	+r(576)
+		padding-bottom: 40px
+	&__wrapper
+		display: flex
+		align-items: flex-start
+		justify-content: space-between
+		+r(991)
+			align-items: center
+			+r(576)
+				flex-direction: column
+	&__content
+		width: 100%
+		flex-shrink: 0
+		max-width: 654px
+		padding-top: 54px
+		margin-right: 66px
+		+r(1199)
+			max-width: 450px
+		+r(991)
+			margin-right: 0
+		+r(576)
+			max-width: none
+			padding-top: 25px
+	&__logo
+		margin-bottom: 45px
+		+r(576)
+			margin-bottom: 25px
+	&__title
+		margin-bottom: 45px
+		+r(576)
+			margin-bottom: 30px
+			text-align: center
+	&__text
+		font-size: 18px
+		margin-bottom: 55px
+		+r(576)
+			margin-bottom: 35px
+		p
+			margin-bottom: 35px
+			+r(576)
+				margin-bottom: 15px
+			&:last-of-type
+				margin-bottom: 0
+	&__image
+		+r(576)
+			margin-top: 20px
+		img
+			display: block
+			width: 100%
+			min-width: 694px
+			+r(991)
+				min-width: 400px
+	&__button
+		+r(576)
+			text-align: center

@@ -1,21 +1,110 @@
 .role
-	width: 100%
-	display: flex
-	align-items: center
-	position: relative
-	&__icon
-		margin-right: 24px
-		img
-			display: block
-			width: 48px
-			height: 48px
-			object-fit: contain
-	&__name
-		max-width: 240px
-		font-weight: bold
-		font-size: 20px
-		line-height: 1.2em
-		letter-spacing: 0.1em
-		text-transform: uppercase
-		color: rgba($fontColor, .5)
-		transition: all .5s ease
+	padding: 32px 0 80px
+	.container
+		max-width: 1190px
+	&__logo
+		margin-bottom: 32px
+	&__row
+		margin: 0 -20px 36px
+		display: flex
+		align-items: flex-start
+		justify-content: center
+		flex-wrap: wrap
+		position: relative
+		+r(576)
+			margin: 0 0 36px
+		&::before
+			content: none
+			width: 18px
+			height: 18px
+			position: absolute
+			bottom: -12px
+			left: calc(50% - 9px)
+			transform: rotate(45deg)
+			border-bottom: 2px solid $accentColor
+			border-right: 2px solid $accentColor
+			opacity: .2
+		&:first-of-type
+			&:before
+				content: ''
+		&:last-of-type
+			margin-bottom: 0
+			&::before
+				content: ''
+				top: -40px
+				bottom: auto
+		&--active
+			&::before
+				opacity: 1
+			.role__arrow
+				opacity: 1
+	&__card
+		margin: 0 20px 20px
+		+r(576)
+			margin: 0 0 20px
+	&__arrow
+		position: absolute
+		width: 135px
+		height: 135px
+		opacity: .2
+		+r(991)
+			display: none
+		&::before
+			content: ''
+			width: 35px
+			height: 35px
+			border-bottom: 2px solid $accentColor
+			border-right: 2px solid $accentColor
+			position: absolute
+			top: 0
+			left: 0
+			transform: rotate(-45deg)
+		&--left
+			transform: rotate(90deg)
+			&-top
+				bottom: 0
+				right: 69%
+				border-radius: 60px 0 0 0
+				border-left: 2px solid $accentColor
+				border-top: 2px solid $accentColor
+				&:before
+					left: -18.5px
+					top: auto
+					bottom: 4px
+					transform: rotate(45deg)
+			&-bottom
+				top: -35px
+				right: 69%
+				border-radius: 0 0 0 60px
+				border-left: 2px solid $accentColor
+				border-bottom: 2px solid $accentColor
+				&:before
+					top: auto
+					left: auto
+					right: 4px
+					bottom: -18.5px
+		&--right
+			transform: rotate(90deg)
+			&-top
+				bottom: 0
+				left: 69%
+				border-radius: 0 60px 0 0
+				border-top: 2px solid $accentColor
+				border-right: 2px solid $accentColor
+				&:before
+					top: auto
+					left: auto
+					right: -19px
+					bottom: 5px
+					transform: rotate(45deg)
+			&-bottom
+				top: -35px
+				left: 69%
+				border-radius: 0 0 60px 0
+				border-right: 2px solid $accentColor
+				border-bottom: 2px solid $accentColor
+				&:before
+					left: 5px
+					top: auto
+					bottom: -19px
+					transform: rotate(135deg)
