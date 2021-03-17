@@ -1,23 +1,42 @@
 .about
-	margin-top: 80px
-	padding: 0 0 80px
-	background: radial-gradient(127.18% 170.71% at 15.14% 0%, #8A3FB7 0%, #501176 100%)
+	padding: 80px 0 0
 	position: relative
+	overflow: hidden
+	&::before
+		content: ''
+		width: 250vw
+		height: 150%
+		position: absolute
+		left: 50%
+		top: 0
+		transform: translateX(-50%)
+		background: radial-gradient(127.18% 170.71% at 15.14% 0%, #8A3FB7 0%, #501176 100%)
+		z-index: -1
+		border-radius: 50%
+		+r(767)
+			width: 400vw
+		+r(575)
+			width: 500vw
 	+r(576)
-		margin-top: 50px
-		padding: 0 0 50px
+		padding: 80px 0 0
 	svg
 		width: 100%
-		height: 150px
-		position: absolute
-		top: -90px
-		right: 0
+		height: 100%
 		z-index: -1
+		position: absolute
+		top: 0
+		left: 0
 	&__title
 		margin-bottom: 40px
 		text-align: center
 		+r(576)
 			margin-bottom: 30px
+	&__sub-title
+		font-size: 20px
+		font-family: $helperFont
+		margin-bottom: 25px
+		text-align: center
+		color: $backgroundColor
 	&__info
 		text-align: center
 		margin: 0 auto 64px
@@ -27,33 +46,148 @@
 			margin-bottom: 40px
 		p
 			color: $backgroundColor
-	&__cards-wrapper
+	//&__cards-wrapper
+	//	display: flex
+	//	flex-wrap: wrap
+	//	max-width: 624px
+	//	margin: 0 auto 40px
+	//	+r(576)
+	//		margin: 0 -12px 25px
+	//&__card
+	//	color: $backgroundColor
+	//	width: calc(50% - 24px)
+	//	margin: 0 12px 24px
+	//	border: 1.5px solid $accentColor
+	//	box-sizing: border-box
+	//	filter: drop-shadow(2px 4px 15px rgba(0, 0, 0, 0.12))
+	//	border-radius: 10px
+	//	padding: 16px
+	//	img
+	//		display: block
+	//		width: 100%
+	//		height: 100%
+	//		max-width: 64px
+	//		max-height: 64px
+	//		object-fit: contain
+	//		margin: 0 auto 4px
+	//	h3
+	//		font-size: 16px
+	//		font-weight: 500
+	//		text-align: center
+	&__users
 		display: flex
-		flex-wrap: wrap
-		max-width: 624px
-		margin: 0 auto 40px
+		align-items: center
+		justify-content: center
+		margin: 0 -25px 140px
 		+r(576)
-			margin: 0 -12px 25px
-	&__card
-		color: $backgroundColor
-		width: calc(50% - 24px)
-		margin: 0 12px 24px
-		border: 1.5px solid $accentColor
-		box-sizing: border-box
-		filter: drop-shadow(2px 4px 15px rgba(0, 0, 0, 0.12))
-		border-radius: 10px
-		padding: 16px
+			margin-bottom: 60px
+			flex-wrap: wrap
+	&__image
+		margin: 0 25px
+		+r(576)
+			width: calc(50% - 50px)
+			margin: 0 25px 25px
 		img
 			display: block
-			width: 100%
-			height: 100%
-			max-width: 64px
-			max-height: 64px
-			object-fit: contain
-			margin: 0 auto 4px
-		h3
-			font-size: 16px
-			font-weight: 500
-			text-align: center
+			width: 85px
+			height: 85px
+			border-radius: 20px
+			background-color: $backgroundColor
+			overflow: hidden
+		&:nth-of-type(odd)
+			img
+				margin-left: auto
+				margin-right: 0
+		&:nth-of-type(even)
+			img
+				margin-right: auto
+				margin-left: 0
 	&__button
 		text-align: center
+	&__cards
+		display: flex
+		align-items: center
+		justify-content: center
+		margin-bottom: 100px
+		+r(1000)
+			flex-direction: column
+		+r(576)
+			margin-bottom: 60px
+	&__card-row
+		width: 31%
+		display: flex
+		flex-direction: column
+		align-items: center
+		justify-content: center
+		+r(1000)
+			width: 100%
+		&:nth-of-type(1)
+			align-items: flex-end
+			+r(1000)
+				align-items: center
+		&:nth-of-type(2)
+			align-items: center
+		&:nth-of-type(3)
+			align-items: flex-start
+			+r(1000)
+				align-items: center
+	&__card
+		width: 100%
+		max-width: 245px
+		background-color: $backgroundColor
+		border-radius: 25px
+		display: flex
+		align-items: center
+		padding: 2px 10px
+		min-height: 42px
+		margin: 14px 0
+		position: relative
+		img
+			margin-right: 15px
+			width: 30px
+			height: 30px
+		h4
+			font-weight: 400
+			font-size: 16px
+			text-transform: uppercase
+			color: rgba($helperColor, .2)
+			line-height: 1.2em
+		&--active
+			h4
+				color: $accentColor
+
+	&__card-arrows
+		position: absolute
+		width: 100%
+		height: 100%
+		left: 0
+		top: 0
+		right: 0
+		bottom: 0
+		+r(1000)
+			display: none
+		span
+			position: absolute
+			&:nth-of-type(1)
+				width: 50px
+				height:  50px
+				border-radius: 60px 0 0 0
+				border-left: 1px solid $backgroundColor
+				border-top: 1px solid $backgroundColor
+				left: 100%
+				bottom: calc(100% + 5px)
+			&:nth-of-type(2)
+				width: 30px
+				height: 1px
+				background: $backgroundColor
+				left: calc(100% + 20px)
+				top: 50%
+				transform: translateY(-50%)
+			&:nth-of-type(3)
+				width: 50px
+				height:  50px
+				border-radius: 0 0 0 60px
+				border-bottom: 1px solid $backgroundColor
+				border-left: 1px solid $backgroundColor
+				left: 100%
+				top: calc(100% + 5px)
